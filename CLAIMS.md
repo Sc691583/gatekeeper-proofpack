@@ -1,15 +1,12 @@
-# Claims (Evidence-First)
+# Gatekeeper ProofPack — Claims (Proof-Only)
 
-C01 — Fail-Closed Default  
-- Unpermitted action attempts are denied with a receipt (PASS/FAIL evidence).
+This repository does **not** contain implementation details.
 
-C02 — Controlled Allow (Safe Path)  
-- A safe allowlisted operation can be allowed and executed under enforced constraints (receipt-based).
+## Proven (offline, reproducible PASS/FAIL)
 
-C03 — Tamper Detection  
-- Evidence tampering is detected deterministically by offline verification (expected FAIL).
+### C1 — Deterministic Posture Transitions (NORMAL ↔ LOCKDOWN)
+- When hazards are present, posture becomes **LOCKDOWN** and execution is **fail-closed** (`allow_execute=false`).
+- When hazards clear, posture returns to **NORMAL** (`allow_execute=true`).
 
-C04 — Anchor Integrity  
-- Anchor chain integrity holds for baseline and fails under mutation suite (reorder/splice/truncate).
-
-Verification is offline and reproducible via `run_all.sh` inside the release bundle.
+Evidence is delivered as an **offline release bundle** (ProofPack).  
+Verification produces a single **overall PASS/FAIL** verdict and exits with code `0` on PASS.
