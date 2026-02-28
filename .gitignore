@@ -1,0 +1,7 @@
+*.tar.zst
+*.zip
+packs/
+evidence_store/
+**/state/
+**/receipts/
+**/*.jsonl
